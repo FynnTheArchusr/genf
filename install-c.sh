@@ -2,7 +2,7 @@
 set -euo pipefail
 
 PROGRAM="genf"
-SOURCE="gentoo.c"
+SOURCE="genf.c"
 
 if [[ ! -f "$SOURCE" ]]; then
     echo "Error: $SOURCE not found."
