@@ -2,7 +2,7 @@
 set -euo pipefail
 
 PROGRAM="genf"
-SCRIPT="gentoo.sh"
+SCRIPT="genf.sh"
 
 if [[ ! -f "$SCRIPT" ]]; then
     echo "Error: $SCRIPT not found."
