@@ -2,39 +2,25 @@
 set -euo pipefail
 
 PROGRAM="genf"
-SCRIPT="genf.sh"
+SOURCE="genf.sh"
+INSTALL_DIR="/usr/local/bin"
 
-# Find the directory this installer is located in
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-if [[ ! -f "$SCRIPT_DIR/$SCRIPT" ]]; then
-    echo "Error: $SCRIPT not found in $SCRIPT_DIR"
+if [[ ! -f "$SOURCE" ]]; then
+    echo "Error: $SOURCE not found."
     exit 1
 fi
 
-if [[ $EUID -eq 0 ]]; then
-    PREFIX="/usr/local/bin"
-else
-    PREFIX="$HOME/.local/bin"
-    mkdir -p "$PREFIX"
+if [[ $EUID -ne 0 ]]; then
+    echo "Please run this installer with sudo:"
+    echo "  sudo ./install-bash.sh"
+    exit 1
 fi
 
-echo "Installing $PROGRAM..."
+echo "Installing $PROGRAM to $INSTALL_DIR/$PROGRAM..."
 
-install -m755 "$SCRIPT_DIR/$SCRIPT" "$PREFIX/$PROGRAM"
+install -m 755 "$SOURCE" "$INSTALL_DIR/$PROGRAM"
 
 echo
 echo "Installed successfully!"
-echo "Location: $PREFIX/$PROGRAM"
-echo
-
-if [[ ":$PATH:" != *":$PREFIX:"* ]]; then
-    echo "NOTE: $PREFIX is not in your PATH."
-    echo "Add this line to your shell config:"
-    echo
-    echo "export PATH=\"$PREFIX:\$PATH\""
-    echo
-fi
-
-echo "Run with:"
-echo "  $PROGRAM"
+echo "Run it with:"
+echo "  genf"
