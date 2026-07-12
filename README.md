@@ -5,35 +5,54 @@
 ## Features
 
 * Lightweight and easy to install
-* Mimics a Gentoo-style system fetch
+* Available as both a Bash script and a C program
 * Perfect for screenshots, jokes, and harmless fun
 
 > **Disclaimer:** This project is intended for entertainment purposes only.
 
 ## Installation
 
-1. Download the `genf` script.
-2. Move it to a directory in your `PATH`:
+### Bash version
+
+1. Rename the script:
 
 ```bash
-sudo mv /path/to/genf /usr/local/bin/genf
+mv genf.sh genf
 ```
 
-3. Make sure it's executable:
+2. Make it executable:
 
 ```bash
-sudo chmod +x /usr/local/bin/genf
+chmod +x genf
+```
+
+3. Install it:
+
+```bash
+sudo mv genf /usr/local/bin/
+```
+
+### C version
+
+1. Compile the source:
+
+```bash
+gcc -O2 -o genf genf.c
+```
+
+2. Install the compiled binary:
+
+```bash
+sudo mv genf /usr/local/bin/
 ```
 
 ## Usage
 
-Simply run:
+Run:
 
 ```bash
 genf
 ```
-
-That's it!
 
 ## License
 
