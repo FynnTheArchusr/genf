@@ -7,7 +7,7 @@
 * Lightweight and easy to install
 * Available as both a Bash script and a C program
 * Perfect for screenshots, jokes, and harmless fun
-* **100% vibe coded** (this part in <> is made by me) <BECAUSE THIS IS SO USELESS WHY WOULD I WASTE MY TIME ON IT LIKE HELLO?>
+* **100% vibe coded**
 
 > **Disclaimer:** This project is intended for entertainment purposes only.
 
@@ -58,6 +58,8 @@ genf
 ## License
 
 This project is provided as-is for fun. Feel free to modify and share it.
+
+this is so bad i had to vibe code it because it was so boring
 
 ---
 
