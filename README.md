@@ -7,7 +7,7 @@
 * Lightweight and easy to install
 * Available as both a Bash script and a C program
 * Perfect for screenshots, jokes, and harmless fun
-* **100% vibe coded**
+* **100% vibe coded** (this part in <> is made by me) <BECAUSE THIS IS SO USELESS WHY WOULD I WASTE MY TIME ON IT LIKE HELLO?>
 
 > **Disclaimer:** This project is intended for entertainment purposes only.
 
