@@ -3,45 +3,37 @@ set -euo pipefail
 
 PROGRAM="genf"
 SOURCE="genf.c"
+INSTALL_DIR="/usr/local/bin"
 
 if [[ ! -f "$SOURCE" ]]; then
     echo "Error: $SOURCE not found."
     exit 1
 fi
 
+if [[ $EUID -ne 0 ]]; then
+    echo "Please run this installer with sudo:"
+    echo "  sudo ./install-c.sh"
+    exit 1
+fi
+
 if command -v gcc >/dev/null 2>&1; then
-    CC=gcc
+    CC="gcc"
 elif command -v clang >/dev/null 2>&1; then
-    CC=clang
+    CC="clang"
 else
     echo "Error: gcc or clang is required."
     exit 1
 fi
 
-if [[ $EUID -eq 0 ]]; then
-    PREFIX="/usr/local/bin"
-else
-    PREFIX="$HOME/.local/bin"
-    mkdir -p "$PREFIX"
-fi
-
-echo "Compiling with $CC..."
+echo "Compiling $PROGRAM..."
 $CC -O2 -Wall -Wextra "$SOURCE" -o "$PROGRAM"
 
-echo "Installing to $PREFIX..."
-install -m755 "$PROGRAM" "$PREFIX/$PROGRAM"
+echo "Installing to $INSTALL_DIR/$PROGRAM..."
+install -m 755 "$PROGRAM" "$INSTALL_DIR/$PROGRAM"
+
+rm -f "$PROGRAM"
 
 echo
 echo "Installed successfully!"
-echo
-
-if [[ ":$PATH:" != *":$PREFIX:"* ]]; then
-    echo "NOTE:"
-    echo "Add this to your shell configuration:"
-    echo
-    echo "export PATH=\"$PREFIX:\$PATH\""
-fi
-
-echo
-echo "Run with:"
-echo "  $PROGRAM"
+echo "Run it with:"
+echo "  genf"
