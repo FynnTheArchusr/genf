@@ -7,6 +7,7 @@
 * Lightweight and easy to install
 * Available as both a Bash script and a C program
 * Perfect for screenshots, jokes, and harmless fun
+* **100% vibe coded**
 
 > **Disclaimer:** This project is intended for entertainment purposes only.
 
@@ -57,3 +58,8 @@ genf
 ## License
 
 This project is provided as-is for fun. Feel free to modify and share it.
+
+---
+
+**Development status:** 100% vibe coded. No roadmap, just vibes.
+
