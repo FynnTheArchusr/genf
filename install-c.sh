@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PROGRAM="gentoobox"
+PROGRAM="genf"
 SOURCE="gentoo.c"
 
 if [[ ! -f "$SOURCE" ]]; then
