@@ -8,6 +8,7 @@
 * Available as both a Bash script and a C program
 * Perfect for screenshots, jokes, and harmless fun
 * **100% vibe coded**
+* The ability to be name changed
 
 > **Disclaimer:** This project is intended for entertainment purposes only.
 
